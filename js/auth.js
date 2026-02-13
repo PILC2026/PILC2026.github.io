@@ -188,7 +188,7 @@ if (registerForm) {
                 email,
                 password, // Note: In a real app, passwords should be hashed
                 role: userRole, // Default role for new users
-                approved: isAdmin ? true : false, // Admin users are auto-approved
+                approved: true, // All users are auto-approved
                 createdAt: new Date().toISOString()
             };
             
@@ -198,11 +198,7 @@ if (registerForm) {
             await setDoc(userRef, userData);
             
             console.log("Registration successful!");
-            if (isAdmin) {
-                showMessage('Admin registration successful! You can now log in.', 'success');
-            } else {
-                showMessage('Registration successful! Please wait for admin approval before you can log in.', 'success');
-            }
+            showMessage('Registration successful! You can now log in.', 'success');
             
             // Clear form and switch to login tab
             registerForm.reset();
