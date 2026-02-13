@@ -1,7 +1,7 @@
 // Offline storage utilities for PWA functionality
 class OfflineStorage {
     constructor() {
-        this.dbName = 'BioMedixDB';
+        this.dbName = 'PILC2026DB';
         this.dbVersion = 1;
         this.db = null;
         this.init();

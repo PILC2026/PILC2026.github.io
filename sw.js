@@ -1,4 +1,4 @@
-const CACHE_NAME = 'biomedix-v1';
+const CACHE_NAME = 'pilc2026-v1';
 const urlsToCache = [
   '/app/home.html',
   '/app/profile.html',
@@ -113,11 +113,11 @@ self.addEventListener('push', function(event) {
   console.log('Push message received:', event);
   
   let notificationData = {
-    title: 'BioMedix TPM',
+    title: 'PILC2026 Conference',
     body: 'New notification',
     icon: '/icons/ikona(svitla).png',
     badge: '/favicon.ico',
-    tag: 'biomedix-notification',
+    tag: 'pilc2026-notification',
     requireInteraction: false,
     actions: [
       {

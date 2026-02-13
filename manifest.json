@@ -1,7 +1,7 @@
 {
-  "name": "BioMedix TPM 2025",
-  "short_name": "BioMedix",
-  "description": "Official app for BioMedix TPM 2025",
+  "name": "PILC2026 Conference",
+  "short_name": "PILC2026",
+  "description": "Official app for PILC2026 Conference",
   "start_url": "/app/home.html",
   "display": "standalone",
   "background_color": "#2c3e50",
