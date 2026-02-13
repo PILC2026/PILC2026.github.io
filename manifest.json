@@ -1,0 +1,27 @@
+{
+  "name": "BioMedix TPM 2025",
+  "short_name": "BioMedix",
+  "description": "Official app for BioMedix TPM 2025",
+  "start_url": "/app/home.html",
+  "display": "standalone",
+  "background_color": "#2c3e50",
+  "theme_color": "#2c3e50",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "/icons/ikona(svitla).png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["business", "productivity"],
+  "lang": "en",
+  "prefer_related_applications": false
+}

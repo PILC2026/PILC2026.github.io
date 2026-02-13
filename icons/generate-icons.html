@@ -1,0 +1,64 @@
+<!-- This is a simple HTML file to generate PNG icons from the SVG -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Icon Generator</title>
+</head>
+<body>
+    <h3>PWA Icon Generator</h3>
+    <p>This page converts the SVG icon to different PNG sizes needed for the PWA.</p>
+    
+    <canvas id="canvas" style="display: none;"></canvas>
+    
+    <div id="downloads">
+        <p>Generated icons will appear below:</p>
+    </div>
+
+    <script>
+        const sizes = [72, 96, 128, 144, 152, 192, 384, 512];
+        const svgContent = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" fill="#2c3e50"/>
+  <circle cx="256" cy="180" r="80" fill="#ffffff"/>
+  <rect x="176" y="280" width="160" height="120" rx="20" fill="#ffffff"/>
+  <text x="256" y="460" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="36" font-weight="bold">PulaTech</text>
+</svg>`;
+
+        function generateIcons() {
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+            const downloadsDiv = document.getElementById('downloads');
+
+            sizes.forEach(size => {
+                canvas.width = size;
+                canvas.height = size;
+
+                const img = new Image();
+                const svgBlob = new Blob([svgContent], { type: 'image/svg+xml' });
+                const url = URL.createObjectURL(svgBlob);
+
+                img.onload = function() {
+                    ctx.clearRect(0, 0, size, size);
+                    ctx.drawImage(img, 0, 0, size, size);
+
+                    canvas.toBlob(function(blob) {
+                        const link = document.createElement('a');
+                        link.download = `icon-${size}x${size}.png`;
+                        link.href = URL.createObjectURL(blob);
+                        link.textContent = `Download ${size}x${size} icon`;
+                        link.style.display = 'block';
+                        link.style.marginBottom = '10px';
+                        downloadsDiv.appendChild(link);
+                    }, 'image/png');
+
+                    URL.revokeObjectURL(url);
+                };
+
+                img.src = url;
+            });
+        }
+
+        // Generate icons when page loads
+        window.addEventListener('load', generateIcons);
+    </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - BioMedix</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/profile.css">
+    <!-- Add auth check script before any other scripts -->
+    <script type="module" src="../js/auth-check.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark app-header">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="home.html">
+                <img class="logo" src="../icons/img/png/logo(bilo).png">
+            </a>
+    
+            <!-- Hamburger menu -->
+            <div class="d-flex align-items-center gap-2">
+                <!-- Only visible on mobile -->
+                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+    
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item admin-only d-none">
+                        <a class="nav-link" href="admin/dashboard.html">Admin</a>
+                    </li>
+                </ul>
+                
+                <ul class="navbar-nav ms-auto">
+                    <!-- No duplicate notification button here -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="logoutBtn">Logout</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div id="alertContainer"></div>
+        
+        <div class="row">
+            <div class="col-12">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h3 class="card-title mb-0">
+                            <i class="bi bi-person-circle me-2"></i>
+                            User Profile
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">First Name</label>
+                                <p class="form-control-plaintext" id="firstName">Loading...</p>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Last Name</label>
+                                <p class="form-control-plaintext" id="lastName">Loading...</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Email Address</label>
+                            <p class="form-control-plaintext" id="email">Loading...</p>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Affiliation</label>
+                            <p class="form-control-plaintext" id="affiliation">Loading...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conference Information -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">
+                            <i class="bi bi-info-circle me-2"></i>
+                            PILC 2026 — Conference Information
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <p class="small text-muted mb-3">Participate</p>
+                        <p>PILC 2026 brings together global experts to explore where talent development, technological progress, and brand power converge. This year’s theme, <strong>Human-Centric Leadership: Talent, Technology, and Brand Power</strong>, focuses on how leadership is transformed when organizations place people at the center while embracing technological advancements and brand authenticity.</p>
+
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <h6 class="mb-1">Dates</h6>
+                                <p class="mb-0">26 – 28 March 2026</p>
+                            </div>
+                            <div class="col-md-4">
+                                <h6 class="mb-1">Venue</h6>
+                                <p class="mb-0">PAR University of Applied Sciences<br>Trg Riječke rezolucije 4, Rijeka, Croatia</p>
+                            </div>
+                            <div class="col-md-4">
+                                <h6 class="mb-1">Format</h6>
+                                <p class="mb-0">Hybrid (In-person + Online)
+                                <br>Conference Schedule: TBA</p>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <h6 class="mb-1">Contact</h6>
+                            <p class="mb-0 small">PAR University of Applied Sciences<br>Tel: +385 (0)51 327 037<br>Email: <a href="mailto:conference@par.hr">conference@par.hr</a></p>
+                        </div>
+
+                        <div class="mb-3">
+                            <h6 class="mb-1">Call for Papers</h6>
+                            <p class="mb-0 small">Authors are invited to prepare papers addressing one or several interrelated thematic areas within the conference’s main topic. Contributions may include theoretical insights, empirical research, practical case studies, and interactive discussions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Partners Section - OUTSIDE container for proper footer behavior -->
+    <div class="partners-section">
+        <div class="container">
+            <div class="d-flex justify-content-center align-items-center">
+                <img src="../icons/img/png/partners1.png" alt="Project Partners 1" class="img-fluid partners-logo">
+                <img src="../icons/img/png/partners2.png" alt="Project Partners 2" class="img-fluid partners-logo">
+            </div>
+        </div>
+    </div>
+
+    <!-- Include scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../js/notifications.js"></script>
+    <script type="module" src="../js/push-notifications.js"></script>
+    <script type="module" src="../js/user-profile.js"></script>
+    <script type="module" src="../js/certificate.js"></script>
+</body>
+</html>

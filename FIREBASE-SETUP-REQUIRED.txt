@@ -1,0 +1,59 @@
+=====================================================
+🚨 REQUIRED: UPDATE FIREBASE FIRESTORE RULES 🚨
+=====================================================
+
+Your website is getting "Missing or insufficient permissions" error because
+the Firestore security rules need to be updated in Firebase Console.
+
+FOLLOW THESE STEPS EXACTLY:
+---------------------------
+
+1. Open your web browser and go to:
+   https://console.firebase.google.com
+
+2. Click on your project: "biomedix-19988"
+
+3. In the left sidebar, click: "Firestore Database"
+
+4. Click the "Rules" tab at the top
+
+5. You will see an editor with current rules
+
+6. DELETE everything in that editor
+
+7. Copy EVERYTHING from the file "firestore-rules.txt" 
+   (starting from "rules_version = '2';" line)
+
+8. Paste it into the Firebase Console editor
+
+9. Click the "Publish" button at the top right
+
+10. Wait for confirmation message "Rules successfully updated"
+
+THAT'S IT! Your registration will work after this.
+
+=====================================================
+WHY IS THIS NEEDED?
+=====================================================
+
+Firebase Firestore has security rules that control who can read/write data.
+By default, it blocks all access for security.
+
+We need to allow:
+- Anyone to register (create user documents)
+- Users to login (read user documents)
+- Admins to approve users (update user documents)
+- Admins to list all users
+
+The rules in "firestore-rules.txt" provide these permissions.
+
+=====================================================
+AFTER UPDATING RULES:
+=====================================================
+
+1. Refresh your website
+2. Try registering a new user
+3. The "Missing or insufficient permissions" error will be gone!
+4. Registration will work successfully
+
+=====================================================
