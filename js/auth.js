@@ -177,7 +177,7 @@ if (registerForm) {
             const userRef = doc(collection(db, "users"));
             
             // Check if this is an admin user (you can customize this logic)
-            const isAdmin = email.includes('admin') || email === 'admin@biomedix.com';
+            const isAdmin = email.includes('admin') || email === 'admin@pilc2026.com';
             const userRole = isAdmin ? 'admin' : 'general';
             
             const userData = {

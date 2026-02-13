@@ -1,8 +1,8 @@
-// Firestore Security Rules for BioMedix
+// Firestore Security Rules for PILC2026
 // 
 // ⚠️ CRITICAL: You MUST copy these rules to Firebase Console
 // 1. Go to: https://console.firebase.google.com
-// 2. Select project: biomedix-19988
+// 2. Select project: pilc2026
 // 3. Go to: Firestore Database → Rules (left sidebar)
 // 4. Copy everything below this line and paste it there
 // 5. Click "Publish"
