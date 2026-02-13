@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <td><input type="checkbox" class="user-select" data-id="${doc.id}"></td>
                     <td>${userData.firstName || ''} ${userData.lastName || ''}</td>
                     <td>${userData.email || ''}</td>
-                    <td>${userData.affiliation || ''}</td>
+                    <!-- affiliation removed -->
                     <td>${userData.country || ''}</td>
                     <td><span class="badge ${getRoleBadgeClass(userData.role)}">${userData.role || 'general'}</span></td>
                     <td>
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('editFirstName').value = userData.firstName || '';
             document.getElementById('editLastName').value = userData.lastName || '';
             document.getElementById('editEmail').value = userData.email || '';
-            document.getElementById('editAffiliation').value = userData.affiliation || '';
+            // affiliation removed
             document.getElementById('editCountry').value = userData.country || '';
             document.getElementById('editRole').value = userData.role || 'general';
             
@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 firstName: document.getElementById('editFirstName').value,
                 lastName: document.getElementById('editLastName').value,
                 email: document.getElementById('editEmail').value,
-                affiliation: document.getElementById('editAffiliation').value,
+                // affiliation removed
                 country: document.getElementById('editCountry').value,
                 role: document.getElementById('editRole').value,
                 updatedAt: new Date().toISOString()
@@ -355,7 +355,7 @@ document.addEventListener('DOMContentLoaded', function() {
         badge.innerHTML = `
             <div class="text-center">
                 <h3 class="badge-name">${userData.firstName || ''} ${userData.lastName || ''}</h3>
-                <p class="badge-affiliation">${userData.affiliation || ''}</p>
+                <!-- affiliation removed -->
                 <p class="badge-country">${userData.country || ''}</p>
                 <p class="badge-role text-muted">${userData.role || 'attendee'}</p>
             </div>

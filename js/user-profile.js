@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById('firstName').textContent = userData.firstName || 'Not provided';
                 document.getElementById('lastName').textContent = userData.lastName || 'Not provided';
                 document.getElementById('email').textContent = userData.email || 'Not provided';
-                document.getElementById('affiliation').textContent = userData.affiliation || 'Not provided';
+                // affiliation removed
             }
         } catch (error) {
             console.error("Error loading user profile:", error);

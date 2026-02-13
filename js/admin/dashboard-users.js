@@ -54,7 +54,7 @@ function applyFilters() {
             (user.firstName || '').toLowerCase().includes(searchTerm) ||
             (user.lastName || '').toLowerCase().includes(searchTerm) ||
             (user.email || '').toLowerCase().includes(searchTerm) ||
-            (user.affiliation || '').toLowerCase().includes(searchTerm);
+            // affiliation removed
         
         const matchesRole = !roleFilter || user.role === roleFilter;
         const matchesApproval = !approvalFilter || 
@@ -119,12 +119,12 @@ function renderDesktopTable(data) {
             </td>
             <td>${escapeHtml(user.email)}</td>
             <td>
-                <button class="btn btn-sm btn-outline-primary me-1 edit-affiliation-btn" 
+                <!-- edit affiliation button removed -->
                         data-id="${user.id}" data-name="${escapeHtml(user.firstName)} ${escapeHtml(user.lastName)}" 
-                        data-current-affiliation="${escapeHtml(user.affiliation)}">
+                        <!-- data-current-affiliation removed -->
                     <i class="bi bi-pencil"></i>
                 </button>
-                ${escapeHtml(user.affiliation) || '<span class="text-muted">-</span>'}
+                <!-- affiliation removed -->
             </td>
             <td><span class="badge ${getRoleBadgeClass(user.role)}">${user.role || 'general'}</span></td>
             <td>
@@ -192,12 +192,12 @@ function renderMobileCards(data) {
                     <span class="detail-value">${escapeHtml(user.email)}</span>
                 </div>
                 <div class="detail-row">
-                    <span class="detail-label">Affiliation</span>
+                    <!-- Affiliation label removed -->
                     <span class="detail-value">
-                        ${escapeHtml(user.affiliation) || '<span class="text-muted">Not provided</span>'}
-                        <button class="btn btn-sm btn-link p-0 ms-2 edit-affiliation-btn" 
+                        <!-- affiliation removed -->
+                        <!-- edit affiliation button removed -->
                                 data-id="${user.id}" data-name="${escapeHtml(user.firstName)}" 
-                                data-current-affiliation="${escapeHtml(user.affiliation)}">
+                                <!-- data-current-affiliation removed -->
                             <i class="bi bi-pencil"></i>
                         </button>
                     </span>
@@ -345,11 +345,10 @@ function addTableEventListeners() {
         });
     });
     
-    document.querySelectorAll('.user-table .edit-affiliation-btn').forEach(btn => {
+    // edit affiliation button logic removed
         btn.addEventListener('click', function(e) {
             e.stopPropagation();
-            const newValue = prompt(`Edit affiliation for ${this.dataset.name}:`, this.dataset.currentAffiliation || '');
-            if (newValue !== null) updateUserField(this.dataset.id, 'affiliation', newValue);
+            // affiliation edit prompt removed
         });
     });
     

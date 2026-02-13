@@ -112,7 +112,7 @@ if (loginForm) {
             localStorage.setItem('userRole', userData.role || 'general');
             localStorage.setItem('userName', `${userData.firstName} ${userData.lastName}`);
             localStorage.setItem('userEmail', userData.email);
-            localStorage.setItem('userAffiliation', userData.affiliation || '');
+            // Removed affiliation
             localStorage.setItem('userFirstName', userData.firstName);
             localStorage.setItem('userLastName', userData.lastName);
             
@@ -147,8 +147,7 @@ if (registerForm) {
         
         const firstName = document.getElementById('firstName').value;
         const lastName = document.getElementById('lastName').value;
-        const affiliationSelect = document.getElementById('affiliationSelect').value;
-        const affiliation = affiliationSelect === 'other' ? document.getElementById('otherAffiliation').value : affiliationSelect;
+        // Removed affiliation
         const email = document.getElementById('registerEmail').value;
         const password = document.getElementById('registerPassword').value;
         
@@ -184,7 +183,7 @@ if (registerForm) {
             const userData = {
                 firstName,
                 lastName,
-                affiliation,
+                // affiliation removed
                 email,
                 password, // Note: In a real app, passwords should be hashed
                 role: userRole, // Default role for new users
@@ -225,20 +224,4 @@ function showMessage(message, type) {
     }
 }
 
-// Handle affiliation dropdown change to show/hide "Other" text field
-const affiliationSelect = document.getElementById('affiliationSelect');
-const otherAffiliationDiv = document.getElementById('otherAffiliationDiv');
-const otherAffiliationInput = document.getElementById('otherAffiliation');
-
-if (affiliationSelect && otherAffiliationDiv && otherAffiliationInput) {
-    affiliationSelect.addEventListener('change', function() {
-        if (this.value === 'other') {
-            otherAffiliationDiv.classList.remove('d-none');
-            otherAffiliationInput.required = true;
-        } else {
-            otherAffiliationDiv.classList.add('d-none');
-            otherAffiliationInput.required = false;
-            otherAffiliationInput.value = '';
-        }
-    });
-}
+// Affiliation logic removed
